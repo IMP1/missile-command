@@ -1,3 +1,5 @@
 *.png
 *.ogg
 *.xcf
+Thumbs.db
+desktop.ini

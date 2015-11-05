@@ -1,5 +1,5 @@
 function love.conf(game)
-	game.window.title = "Meteor Defence"
+    game.window.title = "Meteor Defence"
     game.window.icon = "icon.png"
     game.window.width = 800
     game.window.height = 800

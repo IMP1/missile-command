@@ -14,6 +14,8 @@ Upon destruction, Meteors will split into teeny little chunks. These chunks will
 
 ## Your Buildings
 
+![Meteor Defence Building Key](https://i.imgur.com/nEX3io4.png)
+
 The **Gun Turrets** are the extension of your will. They enable you to defence yourself by sending missiles towards the Meteors.
 
 Each Gun Turret has a **Factory** making ammunition. Unfortunately there's only enough room for 10 missiles for each Gun Turret, but if the number of stocked missiles falls beneath 10, and there is still a Factory standing, the hard-working people there will make more.

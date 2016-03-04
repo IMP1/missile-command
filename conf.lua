@@ -3,7 +3,7 @@ function love.conf(game)
     game.window.icon = "icon.png"
     game.window.width = 800
     game.window.height = 800
-    game.console = true
+    game.console = false
     
     game.modules.joystick = false
     game.modules.physics  = false

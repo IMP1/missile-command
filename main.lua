@@ -1,3 +1,5 @@
+DEBUGGING = false
+
 --[[ Contants for the game dimensions ]]
 GUI_HEIGHT = 264
 GAME_X = 16
@@ -288,8 +290,6 @@ function love.draw()
             e:draw()
         end
     Screen:unset()
-    --[[ draw GUI ]]
-    
     --[[ draw timer ]]
     love.graphics.setColor(32, 32, 32)
     local t
@@ -364,20 +364,25 @@ function love.keypressed(key, isRepeat)
             b:destroy()
         end
     end
-    --[[ Debugging Commands ]]
-    if key == "t" then
-        turrets[selectedTurret]:destroy()
-    end
-    if key == "o" then
-        for _, b in pairs(buildings) do
-            b:damage(0.1)
+    if DEBUGGING then
+        --[[ Debugging Commands ]]
+        if key == "t" then
+            turrets[selectedTurret]:destroy()
         end
-    end
-    if key == "i" then
-        for _, b in pairs(buildings) do
-            if b.vital then
+        if key == "o" then
+            for _, b in pairs(buildings) do
                 b:damage(0.1)
             end
+        end
+        if key == "i" then
+            for _, b in pairs(buildings) do
+                if b.vital then
+                    b:damage(0.1)
+                end
+            end
+        end
+        if key == "return" then
+            spawnCounter = 0
         end
     end
 end

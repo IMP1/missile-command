@@ -47,10 +47,19 @@ function Meteor:hit()
     score = score + 10
     meteorsDestroyed = meteorsDestroyed + 1
     self.finished = true
+    self:createChunks()
+end
+
+function Meteor:createChunks()
+    local MIN_CHUNKS = 2
+    local MAX_CHUNKS = 6
     local r = math.atan2(self.vy, self.vx)
     local speed = math.sqrt(self.vy^2 + self.vx^2)
-    table.insert(chunks, Chunk.new(self.x, self.y, r + math.pi/16, speed / 2))
-    table.insert(chunks, Chunk.new(self.x, self.y, r - math.pi/16, speed / 2))
+    for i = 1, MIN_CHUNKS + math.random() * (MAX_CHUNKS - MIN_CHUNKS) do
+        local a = (math.random() * math.pi / 16) - math.pi / 16
+        local v = math.random() + 0.5
+        table.insert(chunks, Chunk.new(self.x, self.y, r + a, speed * v))
+    end
 end
 
 function Meteor:draw()
